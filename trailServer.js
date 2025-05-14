@@ -11,6 +11,7 @@ const portNumber = 5000;
 process.stdin.setEncoding("utf8");
 
 const hikes = require("./routes/hikes");
+const parks = require("./routes/parks");
 
 /********* COMMAND LINE CODE *********/
 const server = app.listen(portNumber, () => {
@@ -36,6 +37,7 @@ app.set("views", path.resolve(__dirname, "templates"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/search", hikes);
+app.use("/parks", parks);
 
 app.use('/', (request, response) => {
     response.render("index");

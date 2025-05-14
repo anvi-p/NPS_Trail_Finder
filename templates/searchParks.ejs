@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Search National Parks</title>
+    </head>
+
+    <body>
+        <form action="/parks/getActivity" method="post">
+            <fieldset>
+                <label>Choose Activity</label>
+                <select id="activity" name="activity">
+                    <option value="Arts and Culture">Arts and Culture</option>
+                    <option value="Hiking">Hiking</option>
+                    <option value="Wildlife">Wildlife</option>
+                    <option value="Astronomy">Astronomy</option>
+                </select>
+            </fieldset>
+            <input type="reset" value="Reset">
+            <input type="submit" value="Submit Form">
+        </form>
+        
+        <br>
+        <a href="/">HOME</a>
+    </body>
+</html>
