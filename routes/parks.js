@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const hiking_url = "https://developer.nps.gov/api/v1/activities/parks?id=&q=%22Hiking%22&limit=10&sort=&api_key=XKJ6325eJfLQ0OohQwurT0QbxkRNrisuVB6aZgPi";
-const astro_url = "https://developer.nps.gov/api/v1/activities/parks?id=&q=%22Astronomy%22&limit=10&sort=&api_key=XKJ6325eJfLQ0OohQwurT0QbxkRNrisuVB6aZgPi";
-const ac_url = "https://developer.nps.gov/api/v1/activities/parks?id=&q=%22Arts%20and%20Culture%22&limit=10&sort=&api_key=XKJ6325eJfLQ0OohQwurT0QbxkRNrisuVB6aZgPi";
-const wild_url = "https://developer.nps.gov/api/v1/activities/parks?id=&q=%22Wildlife%20Watching%22&limit=10&sort=&api_key=XKJ6325eJfLQ0OohQwurT0QbxkRNrisuVB6aZgPi";
+const hiking_url = `https://developer.nps.gov/api/v1/activities/parks?id=&q=%22Hiking%22&limit=10&sort=&api_key=${process.env.API_KEY}`;
+const astro_url = `https://developer.nps.gov/api/v1/activities/parks?id=&q=%22Astronomy%22&limit=10&sort=&api_key=${process.env.API_KEY}`;
+const ac_url = `https://developer.nps.gov/api/v1/activities/parks?id=&q=%22Arts%20and%20Culture%22&limit=10&sort=&api_key=${process.env.API_KEY}`;
+const wild_url = `https://developer.nps.gov/api/v1/activities/parks?id=&q=%22Wildlife%20Watching%22&limit=10&sort=&api_key=${process.env.API_KEY}`;
 
 // This is actually /parks
 router.get("/", (request, response) => {
