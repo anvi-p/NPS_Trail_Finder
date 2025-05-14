@@ -8,8 +8,9 @@ require("dotenv").config({
 
 const app = express();
 const portNumber = 5000;
-const router1 = express.Router();
 process.stdin.setEncoding("utf8");
+
+const hikes = require("./routes/hikes");
 
 /********* COMMAND LINE CODE *********/
 const server = app.listen(portNumber, () => {
@@ -34,6 +35,8 @@ app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "templates"));
 app.use(bodyParser.urlencoded({ extended: false }));
 
-router1.get('/', function(request, response) {
-    response.render("index.ejs");
+app.use("/search", hikes);
+
+app.use('/', (request, response) => {
+    response.render("index");
 });
