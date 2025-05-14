@@ -9,7 +9,7 @@ require("dotenv").config({
 const app = express();
 const portNumber = 5000;
 const router1 = express.Router();
-
+process.stdin.setEncoding("utf8");
 
 /********* COMMAND LINE CODE *********/
 const server = app.listen(portNumber, () => {
