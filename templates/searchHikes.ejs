@@ -3,23 +3,22 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Search Hikes</title>
+	<title>Search Hikes</title>    
+    <link rel="stylesheet" href="/style.css" type="text/css">
 </head>
 
 <body>
     <h1>Search for Hikes</h1>
     <form action="/search/getHikes" method="post">
         <fieldset>
-            <label>Search by State Code <input type="text" id="state" name="state" maxlength="2" minlength="2" pattern="[a-zA-Z]{2}"></label><br>
+            <label>Search by State Code <input type="text" id="state" name="state" maxlength="2" minlength="2" pattern="[a-zA-Z]{2}" required></label><br>
             <label>Search by Difficulty 
                 <select id="difficulty" name="difficulty">
-                    <option value="Easy">Easy</option>
-                    <option value="Moderate">Moderate</option>
-                    <option value="Hard">Hard</option>
+                    <option value="easy">Easy</option>
+                    <option value="moderate">Moderate</option>
+                    <option value="hard">Hard</option>
                 </select>
             </label><br>
-            <input type="checkbox" name="freeHikes" value ="freeHikes"><label for="freeHikes">Search for Free Hikes Only</label><br>
-            <input type="checkbox" name="petFriendly" value ="petFriendly"><label for="petFriendly">Search for Pet Friendly Hikes Only</label><br>
         </fieldset><br>
         <input type="Reset"> <input type="submit" value="Search!">
     </form> 
