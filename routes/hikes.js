@@ -13,7 +13,6 @@ router.post("/getHikes", (request, response) => {
     const {state, difficulty} = request.body;
     const hikeCode = "BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA";
     const url = `https://developer.nps.gov/api/v1/thingstodo?stateCode=${state}&q=${hikeCode} AND ${difficulty}&api_key=${process.env.API_KEY}&limit=20&sort=-relevanceScore`; 
-    console.log(url);
     (async () => {
         const api_response = await fetch(url);
         const hikes = await api_response.json();
@@ -30,7 +29,7 @@ router.post("/getHikes", (request, response) => {
                             <div class="description"><p>${entry.shortDescription}</p><div>
                             <footer><a href=${entry.url}>Learn more here!</a></footer>
                         </article>`;
-                    });
+            });
 
         response.render("retrieveHikes", {hikesCards: cardsList, state: state});
     })();

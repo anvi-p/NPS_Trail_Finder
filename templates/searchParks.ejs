@@ -4,6 +4,10 @@
         <meta charset="utf-8" />
         <title>Search National Parks</title>
         <link rel="stylesheet" href="/style.css" type="text/css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Darumadrop+One&family=Jost:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
     </head>
 
     <body>
@@ -11,23 +15,22 @@
             <a href="/">Home</a>
             <a href="/search">Hikes</a>
             <a href="/parks">National Parks</a>
+            <a href="/comments">Add a Comment</a>
+            <a href="/allComments">View Comments</a>
         </div>
         <h1>Search for National Parks</h1>
-        <form action="/parks/getActivity" method="post">
-            <fieldset>
-                <label>Search by Activity</label>
-                <select id="activity" name="activity">
-                    <option value="Arts and Culture">Arts and Culture</option>
-                    <option value="Hiking">Hiking</option>
-                    <option value="Wildlife">Wildlife</option>
-                    <option value="Astronomy">Astronomy</option>
-                </select>
-            </fieldset>
-            <input type="reset" value="Reset">
-            <input type="submit" value="Submit Form">
+        <form action="/parks/getActivity" method="post" class="formCard">
+            <label>Search by Activity
+            <select id="activity" name="activity">
+                <option value="Arts and Culture">Arts and Culture</option>
+                <option value="Hiking">Hiking</option>
+                <option value="Wildlife">Wildlife</option>
+                <option value="Astronomy">Astronomy</option>
+            </select></label><br>
+            <div class="buttons">
+                <input type="reset" value="Reset">
+                <input type="submit" value="Search">
+            </div>
         </form>
-        
-        <br>
-        <a href="/">HOME</a>
     </body>
 </html>

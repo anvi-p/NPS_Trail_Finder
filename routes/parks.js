@@ -12,7 +12,7 @@ router.get("/", (request, response) => {
 
 router.post("/getActivity", async (request, response) => {
     let activity = request.body.activity;
-    let table = "<table border='1'><tr><th>Designation</th><th>Name</th><th>Website</th></tr>";
+    let table = "<table border='1'><tr><th>Designation</th><th>Name</th><th>Visit</th></tr>";
     let url = "";
 
     if (activity === "Arts and Culture") {
@@ -41,7 +41,7 @@ router.post("/getActivity", async (request, response) => {
         let desig = park.designation;
         let link = park.url;
 
-        table += `<tr><td>${desig}</td><td>${name}</td><td><a href=${link}>Website</a></td></tr>`;
+        table += `<tr><td>${desig}</td><td>${name}</td><td><a href=${link}>&#x1F517</a></td></tr>`;
     }
     
     table += "</table>"

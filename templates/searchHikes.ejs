@@ -5,28 +5,35 @@
 	<meta charset="utf-8" />
 	<title>Search Hikes</title>    
     <link rel="stylesheet" href="/style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Darumadrop+One&family=Jost:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="navBar">
-        <a href="/">Home</a>
-        <a href="/search">Hikes</a>
-        <a href="/parks">National Parks</a>
+            <a href="/">Home</a>
+            <a href="/search">Hikes</a>
+            <a href="/parks">National Parks</a>
+            <a href="/comments">Add a Comment</a>
+            <a href="/allComments">View Comments</a>
     </div>
     <h1>Search for Hikes</h1>
-    <form action="/search/getHikes" method="post">
-        <fieldset>
-            <label>Search by State Code <input type="text" id="state" name="state" maxlength="2" minlength="2" pattern="[a-zA-Z]{2}" required placeholder="VA"></label><br>
-            <label>Search by Difficulty 
+    <span>
+        <form action="/search/getHikes" method="post" class="formCard">
+            <label>Search by State Code: <input type="text" id="state" name="state" maxlength="2" minlength="2" size="2" pattern="[a-zA-Z]{2}" required placeholder="VA"></label><br>
+            <label>Search by Difficulty: 
                 <select id="difficulty" name="difficulty">
                     <option value="easy">Easy</option>
                     <option value="moderate">Moderate</option>
-                    <option value="difficult    ">Hard</option>
+                    <option value="difficult">Hard</option>
                 </select>
             </label><br>
-        </fieldset><br>
-        <input type="Reset"> <input type="submit" value="Search!">
-    </form> 
-	<hr>
+            <div class="buttons">
+                <input type="reset" value="Reset">
+                <input type="submit" value="Search">
+            </div>
+        </form> 
+    </span> 
 </body>
 </html>
