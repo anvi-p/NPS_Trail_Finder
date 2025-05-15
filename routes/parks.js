@@ -42,7 +42,7 @@ router.post("/getActivity", async (request, response) => {
         let link = park.url;
         let parkCode = park.parkCode;
 
-        let img_url = `https://developer.nps.gov/api/v1/parks?parkCode=%22${parkCode}%22&api_key=${process.env.API_KEY}`;
+        let img_url = `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${process.env.API_KEY}`;
         let img_res = await fetch(img_url);
         let img_json = await img_res.json();
         let img_data = img_json.data[0];
