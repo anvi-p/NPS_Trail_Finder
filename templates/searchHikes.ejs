@@ -8,6 +8,11 @@
 </head>
 
 <body>
+    <div class="navBar">
+        <a href="/">Home</a>
+        <a href="/search">Hikes</a>
+        <a href="/parks">National Parks</a>
+    </div>
     <h1>Search for Hikes</h1>
     <form action="/search/getHikes" method="post">
         <fieldset>
@@ -16,13 +21,12 @@
                 <select id="difficulty" name="difficulty">
                     <option value="easy">Easy</option>
                     <option value="moderate">Moderate</option>
-                    <option value="hard">Hard</option>
+                    <option value="difficult    ">Hard</option>
                 </select>
             </label><br>
         </fieldset><br>
         <input type="Reset"> <input type="submit" value="Search!">
     </form> 
 	<hr>
-    <a href="/">BACK</a>
 </body>
 </html>

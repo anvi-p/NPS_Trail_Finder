@@ -3,12 +3,19 @@
     <head>
         <meta charset="utf-8" />
         <title>Search National Parks</title>
+        <link rel="stylesheet" href="/style.css" type="text/css">
     </head>
 
     <body>
+        <div class="navBar">
+            <a href="/">Home</a>
+            <a href="/search">Hikes</a>
+            <a href="/parks">National Parks</a>
+        </div>
+        <h1>Search for National Parks</h1>
         <form action="/parks/getActivity" method="post">
             <fieldset>
-                <label>Choose Activity</label>
+                <label>Search by Activity</label>
                 <select id="activity" name="activity">
                     <option value="Arts and Culture">Arts and Culture</option>
                     <option value="Hiking">Hiking</option>

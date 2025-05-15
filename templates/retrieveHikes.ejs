@@ -5,15 +5,18 @@
 	<meta charset="utf-8" />
 	<title>Found Hikes </title>
     <link rel="stylesheet" href="/style.css" type="text/css">
-
 </head>
 
 <body>
+    <div class="navBar">
+        <a href="/">Home</a>
+        <a href="/search">Hikes</a>
+        <a href="/parks">National Parks</a>
+    </div>
+
     <h1>Found Hikes for <%- state %></h1>
     <div class="cards">
-    <%- hikesCards %>
+        <%- hikesCards %>
     </div>
-	<hr>
-    <a href="/">BACK</a>
 </body>
 </html>
