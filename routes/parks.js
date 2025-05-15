@@ -38,7 +38,6 @@ router.post("/getActivity", async (request, response) => {
         i += 1;
 
         let name = park.fullName;
-        let desig = park.designation;
         let link = park.url;
         let parkCode = park.parkCode;
 
@@ -49,9 +48,9 @@ router.post("/getActivity", async (request, response) => {
         let img_info = img_data.images[0];
         let image = img_info.url;
         cardsList += `<article class="card">
-                        <h3>${name} ${desig}</h3>
+                        <h3><a href=${link}>${name}</a></h3>
                         <img src=${image}>
-                        <footer><a href=${link}>Learn more here!</a></footer>
+                        <br><br>
                     </article>`;
     }
     
@@ -59,7 +58,6 @@ router.post("/getActivity", async (request, response) => {
         activity: activity,
         table: cardsList
     }
-
     response.render("retrieveParks", vals);
 });
 

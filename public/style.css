@@ -25,7 +25,7 @@ img{
     border-radius: 10px;
     grid-template-rows: max-content 150px 1fr;
     background-color: #B8D5B8;
-    display: grid;
+    display: grid;  
 }
 .card h3, footer{
     display: flex;
@@ -38,7 +38,7 @@ img{
     align-self: flex-end;
     margin-top: auto;
 }
-h3{
+.card h3{
     font-size: 20px;
 }
 .navBar{
@@ -57,13 +57,14 @@ h3{
     background-color: #F5F1E3;
     color: #413620;
 }
-p{
-    margin: 10px;
-}
 .description{
-    margin-top: 50px;
+    margin-top: 40px;
     font-size: 1rem;
     text-align: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 175px;   
+    overflow-y: auto;
 }
 .intro{
     font-size: 1.25rem;
@@ -92,14 +93,13 @@ input[type="reset"], input[type="submit"]{
     font-family: "Cactus Classical Serif", serif;
 }
 input[type="reset"]:hover, input[type="submit"]:hover{
-  background-color: #F5F1E3;
-  color: #413620;
+    background-color: #F5F1E3;
+    color: #413620;
 }
 select, input[type="text"], textarea, input[type="email"]{
     background-color: #F5F1E3;
     border: none;
     color: #413620;
-    text-align: center;
     text-decoration: none;
     display: inline-block;
     border-radius: 2px;
@@ -127,4 +127,22 @@ table{
 }
 td{
     text-align: left;
+}
+.commentsCard{
+    margin: 10px;
+    display: flex;
+}
+h4{
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+}
+.commentConfirm{
+    margin: 10px;
+    width: fit-content;
+    margin: 0 auto; 
+    padding: 10px;
+    padding-bottom: 0;
 }

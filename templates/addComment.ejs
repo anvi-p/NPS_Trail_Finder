@@ -19,11 +19,11 @@
         </div>
         <h1>Add a comment</h1>
         <form action="/comments" method="post" class="formCard">
-                <label>Trail Name: <input type="text" id="name" name="name"></label><br>
-                <label>Your Name: <input type="text" id="author" name="author"></label><br>
-                <label>Your Email: <input type="email" id="email" name="email"></label><br><br>
+                <label>Trail Name: <input type="text" id="name" name="name" required></label><br>
+                <label>Your Name: <input type="text" id="author" name="author" required></label><br>
+                <label>Your Email: <input type="email" id="email" name="email" required></label><br><br>
                 <label>Your Comment:<br>
-                <textarea id="comment" name="comment" rows="4" cols="50"></textarea></label>
+                <textarea id="comment" name="comment" rows="4" cols="50" required></textarea></label>
             <div class="buttons">
                 <input type="reset" value="Reset">
                 <input type="submit" value="Add Comment">

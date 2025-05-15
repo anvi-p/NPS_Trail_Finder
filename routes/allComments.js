@@ -19,17 +19,18 @@ async function retrieve() {
         const database = client.db(process.env.MONGO_DB_NAME);
         const collection = database.collection(process.env.MONGO_COLLECTION);
 
-        let table = "<table border='1'><tr><th>Trail</th><th>Name</th><th>Comment</th></tr>";
-
+        let cardsList = "";
         let cursor = collection.find({});
         let document = await cursor.next();
         while (document != null) {
-            table += `<tr><td>${document.Trail}</td><td>${document.Name}</td><td>${document.Email}</td><td>${document.Comment}</td></tr>`;
+            cardsList += `<article class="card">
+                            <h4>${document.Trail}</h4>
+                            <p class="commentsCard">${document.Comment}</p>
+                            <h3>${document.Email} - ${document.Name}</h3>
+                        </article>`;
             document = await cursor.next();
         }
-
-        table += "</table>"
-        return table;
+        return cardsList;
 
     } catch(e) {
         console.error(e);
