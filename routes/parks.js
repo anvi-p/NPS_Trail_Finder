@@ -12,7 +12,7 @@ router.get("/", (request, response) => {
 
 router.post("/getActivity", async (request, response) => {
     let activity = request.body.activity;
-    let table = "<table border='1'><tr><th>Image</th><th>Designation</th><th>Name</th><th>Visit</th></tr>";
+    let cardsList = "";
     let url = "";
 
     if (activity === "Arts and Culture") {
@@ -48,15 +48,16 @@ router.post("/getActivity", async (request, response) => {
         let img_data = img_json.data[0];
         let img_info = img_data.images[0];
         let image = img_info.url;
-
-        table += `<tr><td><img src=${image}></td><td>${desig}</td><td>${name}</td><td><a href=${link}>&#x1F517</a></td></tr>`;
+        cardsList += `<article class="card">
+                        <h3>${name} ${desig}</h3>
+                        <img src=${image}>
+                        <footer><a href=${link}>Learn more here!</a></footer>
+                    </article>`;
     }
     
-    table += "</table>"
-
     let vals = {
         activity: activity,
-        table: table
+        table: cardsList
     }
 
     response.render("retrieveParks", vals);
