@@ -95,7 +95,7 @@ input[type="reset"]:hover, input[type="submit"]:hover{
   background-color: #F5F1E3;
   color: #413620;
 }
-select, input[type="text"], textarea{
+select, input[type="text"], textarea, input[type="email"]{
     background-color: #F5F1E3;
     border: none;
     color: #413620;

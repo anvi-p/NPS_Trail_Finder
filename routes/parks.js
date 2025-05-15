@@ -12,7 +12,7 @@ router.get("/", (request, response) => {
 
 router.post("/getActivity", async (request, response) => {
     let activity = request.body.activity;
-    let table = "<table border='1'><tr><th>Designation</th><th>Name</th><th>Visit</th></tr>";
+    let table = "<table border='1'><tr><th>Image</th><th>Designation</th><th>Name</th><th>Visit</th></tr>";
     let url = "";
 
     if (activity === "Arts and Culture") {
@@ -40,8 +40,16 @@ router.post("/getActivity", async (request, response) => {
         let name = park.fullName;
         let desig = park.designation;
         let link = park.url;
+        let parkCode = park.parkCode;
 
-        table += `<tr><td>${desig}</td><td>${name}</td><td><a href=${link}>&#x1F517</a></td></tr>`;
+        let img_url = `https://developer.nps.gov/api/v1/parks?parkCode=%22${parkCode}%22&api_key=${process.env.API_KEY}`;
+        let img_res = await fetch(img_url);
+        let img_json = await img_res.json();
+        let img_data = img_json.data[0];
+        let img_info = img_data.images[0];
+        let image = img_info.url;
+
+        table += `<tr><td><img src=${image}></td><td>${desig}</td><td>${name}</td><td><a href=${link}>&#x1F517</a></td></tr>`;
     }
     
     table += "</table>"

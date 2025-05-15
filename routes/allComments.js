@@ -24,7 +24,7 @@ async function retrieve() {
         let cursor = collection.find({});
         let document = await cursor.next();
         while (document != null) {
-            table += `<tr><td>${document.Trail}</td><td>${document.Name}</td><td>${document.Comment}</td></tr>`;
+            table += `<tr><td>${document.Trail}</td><td>${document.Name}</td><td>${document.Email}</td><td>${document.Comment}</td></tr>`;
             document = await cursor.next();
         }
 

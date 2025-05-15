@@ -13,13 +13,15 @@ router.get("/", (request, response) => {
 router.post("/", async (request, response) => {
     const trailName = request.body.name;
     const author = request.body.author;
+    const email = request.body.email;
     const comment = request.body.comment;
 
-    await saveInMongo(trailName, author, comment);
+    await saveInMongo(trailName, author, email, comment);
     
     let data = {
         trailName: trailName,
         name: author,
+        email: email,
         comment: comment
     };
 
@@ -27,7 +29,7 @@ router.post("/", async (request, response) => {
 });
 
 /*** MONGODB CODE ***/
-async function saveInMongo(name, author, comment) {
+async function saveInMongo(name, author, email, comment) {
     const uri = process.env.MONGO_CONNECTION_STRING;
     const client = new MongoClient(uri, { serverApi: ServerApiVersion.v1 });
 
@@ -39,6 +41,7 @@ async function saveInMongo(name, author, comment) {
         const data = {
             Trail: name,
             Name: author,
+            Email: email,
             Comment: comment
         };
         await collection.insertOne(data);
