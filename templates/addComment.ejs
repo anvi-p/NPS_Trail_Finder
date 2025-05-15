@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Add Comments</title>
+    </head>
+
+    <body>
+        <form action="/comments/getComments" method="post">
+            <fieldset>
+                <label>Information</label>
+                Trail Name: <input type="text" id="name" name="name">
+                Your Name: <input type="text" id="author" name="author"> 
+            </fieldset>
+            <fieldset>
+                <label>Add Comment</label>
+                <input type="textarea" id="comment" name="comment">
+            </fieldset>
+            <input type="reset" value="Reset Textbox">
+            <input type="submit" value="Add Comment">
+        </form>
+        
+        <br>
+        <a href="/">HOME</a>
+    </body>
+</html>
