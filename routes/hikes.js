@@ -12,15 +12,22 @@ router.get("/", (request, response) => {
 router.post("/getHikes", (request, response) => {
     const {state, difficulty} = request.body;
     const hikeCode = "BFF8C027-7C8F-480B-A5F8-CD8CE490BFBA";
-    const url = `https://developer.nps.gov/api/v1/thingstodo?q=${hikeCode}&&${difficulty}&stateCode=${state}&api_key=${process.env.API_KEY}&limit=10&sort=-relevanceScore`; 
+    const url = `https://developer.nps.gov/api/v1/thingstodo?q=${hikeCode}&&${difficulty}&stateCode=${state}&api_key=${process.env.API_KEY}&limit=20&sort=-relevanceScore`; 
     (async () => {
         const api_response = await fetch(url);
         const hikes = await api_response.json();
         const hikesList = hikes.data;
-        let table = "<table border='1'><tr><th>Title</th><th>Description</th><th>Duration</th><th>Image</th></tr>";
-        hikesList.forEach(entry => table += `<tr><td>${entry.title}</td><td>${entry.shortDescription}</td><td>${entry.duration}</td><td><img src=${entry.images[0].url}></td></tr>`);
-        table += "</table>";
-        response.render("retrieveHikes", {hikesList: table, state: state});
+        let cardsList = "";
+        hikesList.forEach(entry => {
+            cardsList += `<article class="card">
+                            <h3>${entry.title}</h3>
+                            <img src=${entry.images[0].url}>
+                            <h4><strong>${entry.duration}</strong></h4>
+                            <div class="description"><p>${entry.shortDescription}</p></div>
+                            <footer><a href=${entry.url}>Learn more here!</a></footer>
+                        </article>`});
+
+        response.render("retrieveHikes", {hikesCards: cardsList, state: state});
     })();
 });
 

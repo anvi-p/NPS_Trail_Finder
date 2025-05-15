@@ -35,6 +35,7 @@ process.stdin.on('readable', () => {
 app.set("view engine", "ejs");
 app.set("views", path.resolve(__dirname, "templates"));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static('public'));
 
 app.use("/search", hikes);
 app.use("/parks", parks);

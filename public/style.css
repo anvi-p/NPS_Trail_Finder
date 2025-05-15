@@ -1,0 +1,28 @@
+body{
+    background-color: tan;
+}
+img {
+    background-size: cover;
+    object-fit: cover;
+    width: 100%;
+    height: 200px; 
+    display: block;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    grid-gap: 10px;
+    margin: 30px;
+}
+.card {
+    border: 1px solid;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: max-content 200px 1fr;
+}
+.card h3, footer{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    text-align: center;
+}
