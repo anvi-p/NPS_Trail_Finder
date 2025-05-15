@@ -1,11 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const path = require("path");
+require("dotenv").config({
+   path: path.resolve(__dirname, ".env"),
+});
 
 router.get("/", (request, response) => {
     response.render("addComment");
 });
 
-router.post("/getComments", async (request, response) => {
+router.post("/", async (request, response) => {
     const trailName = request.body.name;
     const author = request.body.author;
     const comment = request.body.comment;
@@ -44,3 +49,5 @@ async function saveInMongo(name, author, comment) {
         await client.close();
     }
 }
+
+module.exports = router;

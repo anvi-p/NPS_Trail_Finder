@@ -12,6 +12,8 @@ process.stdin.setEncoding("utf8");
 
 const hikes = require("./routes/hikes");
 const parks = require("./routes/parks");
+const comments = require("./routes/comments");
+const allComments = require("./routes/allComments");
 
 /********* COMMAND LINE CODE *********/
 const server = app.listen(portNumber, () => {
@@ -39,6 +41,8 @@ app.use(express.static('public'));
 
 app.use("/search", hikes);
 app.use("/parks", parks);
+app.use("/comments", comments);
+app.use("/allComments", allComments);
 
 app.use('/', (request, response) => {
     response.render("index");
